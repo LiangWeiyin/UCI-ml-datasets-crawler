@@ -48,16 +48,16 @@ DEFAULT_REQUEST_HEADERS = {
 
 # Enable or disable spider middlewares
 # See https://doc.scrapy.org/en/latest/topics/spider-middleware.html
-SPIDER_MIDDLEWARES = {
-   'datasets.middlewares.RandomUserAgentMiddleware': 543,
-#   'db_scrapy.middlewares.ProxyMiddleware': 544,   # 阿布云代理，需要时取消注释
-}
+# SPIDER_MIDDLEWARES = {
+# }
 
 # Enable or disable downloader middlewares
 # See https://doc.scrapy.org/en/latest/topics/downloader-middleware.html
-#DOWNLOADER_MIDDLEWARES = {
-#    'datasets.middlewares.DatasetsDownloaderMiddleware': 543,
-#}
+DOWNLOADER_MIDDLEWARES = {
+    # 'datasets.middlewares.DatasetsDownloaderMiddleware': 543,
+    'datasets.middlewares.RandomUserAgentMiddleware': 543,
+    # 'datasets.middlewares.ProxyMiddleware': 544,   # 阿布云代理，需要时取消注释
+}
 
 # Enable or disable extensions
 # See https://doc.scrapy.org/en/latest/topics/extensions.html
@@ -69,8 +69,8 @@ SPIDER_MIDDLEWARES = {
 # See https://doc.scrapy.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
     # 'scrapy.pipelines.files.FilesPipeline': 1,
-    # 'datasets.pipelines.DatasetsFilesPipeline': 1,
-    'datasets.pipelines.DatasetsDescPdfPipeline': 1,
+    'datasets.pipelines.DatasetsFilesPipeline': 1,
+    # 'datasets.pipelines.DatasetsDescPdfPipeline': 1,
 }
 
 # Enable and configure the AutoThrottle extension (disabled by default)
